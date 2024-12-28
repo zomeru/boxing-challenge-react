@@ -87,4 +87,22 @@ describe("ProductSelector Component", () => {
     fireEvent.click(screen.getByText("Clear Products"));
     expect(mockOnProductsChange).toHaveBeenCalledWith([]);
   });
+
+  it("should allow changing quantity of a product", () => {
+    render(
+      <ProductSelector
+        products={mockProducts}
+        selectedProducts={[{ productId: 1, quantity: 1 }]}
+        onProductsChange={mockOnProductsChange}
+        maxProducts={5}
+      />,
+    );
+
+    fireEvent.change(screen.getByLabelText("Quantity"), {
+      target: { value: "5" },
+    });
+    expect(mockOnProductsChange).toHaveBeenCalledWith([
+      { productId: 1, quantity: 5 },
+    ]);
+  });
 });

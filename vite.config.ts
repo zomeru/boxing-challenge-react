@@ -17,8 +17,14 @@ export default defineConfig({
     coverage: {
       provider: "istanbul",
       all: true,
-      include: ["src/**/*.ts"],
-      exclude: ["node_modules", "src/**/*.test.ts"],
+      include: ["src/**/*.ts", "src/**/*.tsx"],
+      exclude: [
+        "node_modules",
+        "src/**/*.test.ts",
+        "src/**/*.test.tsx",
+        "src/theme/index.ts",
+        "src/App.tsx",
+      ],
     },
   },
 });
