@@ -65,7 +65,7 @@ const findSmallestSuitableBox = (
  * @param quantity - Quantity of the product
  * @returns Suitable packed box or null if none found
  */
-const findSuitableBoxExistingForCombination = (
+const findSuitableExistingBoxForCombination = (
   packedBoxes: PackedBox[],
   product: Product,
   quantity: number,
@@ -161,7 +161,7 @@ const packProducts = (
   // Process each product in order of efficiency
   for (const { selection, product } of productsWithData) {
     const totalWeight = product.weight * selection.quantity; // Calculate total weight
-    let packedBox = findSuitableBoxExistingForCombination(
+    let packedBox = findSuitableExistingBoxForCombination(
       result.packedBoxes,
       product,
       selection.quantity,
@@ -203,6 +203,6 @@ export {
   canFitInBox,
   createNewPackedBox,
   findSmallestSuitableBox,
-  findSuitableBoxExistingForCombination,
+  findSuitableExistingBoxForCombination,
   packProducts,
 };

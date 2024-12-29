@@ -12,7 +12,7 @@ import {
   canFitInBox,
   createNewPackedBox,
   findSmallestSuitableBox,
-  findSuitableBoxExistingForCombination,
+  findSuitableExistingBoxForCombination,
   packProducts,
 } from "../packingAlgo";
 
@@ -194,7 +194,7 @@ describe("findSuitableBoxForCombination", () => {
       height: 5,
       weight: 10,
     };
-    const packedBox = findSuitableBoxExistingForCombination(
+    const packedBox = findSuitableExistingBoxForCombination(
       packedBoxes,
       product,
       3,
@@ -240,7 +240,7 @@ describe("findSuitableBoxForCombination", () => {
       weight: 20,
     };
     expect(
-      findSuitableBoxExistingForCombination(packedBoxes, product, 2),
+      findSuitableExistingBoxForCombination(packedBoxes, product, 2),
     ).toBeNull();
   });
 });
