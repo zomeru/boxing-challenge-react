@@ -46,6 +46,19 @@ describe("ProductSelector Component", () => {
     ]);
   });
 
+  it("should disabled the Add Product button when the max limit is reached", () => {
+    render(
+      <ProductSelector
+        products={mockProducts}
+        selectedProducts={[{ productId: 1, quantity: 1 }]}
+        onProductsChange={mockOnProductsChange}
+        maxProducts={1}
+      />,
+    );
+
+    expect(screen.getByText("Add Product")).toBeDisabled();
+  });
+
   it("should not add more products than the max limit", () => {
     render(
       <ProductSelector
@@ -104,5 +117,26 @@ describe("ProductSelector Component", () => {
     expect(mockOnProductsChange).toHaveBeenCalledWith([
       { productId: 1, quantity: 5 },
     ]);
+  });
+
+  it("renders product options correctly", () => {
+    render(
+      <ProductSelector
+        products={mockProducts}
+        selectedProducts={[{ productId: 1, quantity: 1 }]}
+        onProductsChange={mockOnProductsChange}
+        maxProducts={5}
+      />,
+    );
+
+    const product = screen.getAllByText("Product 1")[0];
+    expect(product).toBeInTheDocument();
+
+    const selectCombobox = screen.getByRole("combobox");
+    fireEvent.mouseDown(selectCombobox);
+
+    mockProducts.forEach((product) => {
+      expect(screen.getAllByText(product.name)[0]).toBeInTheDocument();
+    });
   });
 });

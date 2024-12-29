@@ -42,8 +42,6 @@ export const PackingResults: React.FC<PackingResultsProps> = ({ result }) => {
 
       <Box sx={{ mt: 2 }}>
         {result.packedBoxes.map((packedBox, boxIndex) => {
-          // console.log('products', packedBox.products);
-
           return (
             <Accordion key={boxIndex} defaultExpanded sx={{ mb: 2 }}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>

@@ -138,6 +138,9 @@ export const ProductSelector: React.FC<ProductSelectorProps> = ({
                   handleProductChange(index, e as SelectChangeEvent<number>)
                 }
                 size="small"
+                inputProps={{
+                  "data-testid": `product-select-${index}`,
+                }}
               >
                 {products.map((product) => (
                   <MenuItem key={product.id} value={product.id}>

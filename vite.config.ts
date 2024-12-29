@@ -23,7 +23,6 @@ export default defineConfig({
         "src/**/*.test.ts",
         "src/**/*.test.tsx",
         "src/theme/index.ts",
-        "src/App.tsx",
       ],
     },
   },
