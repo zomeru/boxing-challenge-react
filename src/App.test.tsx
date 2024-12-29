@@ -7,8 +7,6 @@ describe("App Component", () => {
   it("renders main app component", async () => {
     render(<App />);
 
-    screen.debug();
-
     expect(screen.getByText(/Boxing Challenge/i)).toBeInTheDocument();
     expect(screen.getAllByText("Select Products")[0]).toBeInTheDocument();
     expect(
