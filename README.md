@@ -91,11 +91,17 @@ npm run test
 
 ```
 src/
+├── assets/             # Static files
 ├── components/         # Reusable React components
+│   └── __tests__/      # Tests for components
 ├── data/               # Json files for products and boxes
-├── tests/              # Test setup
+├── tests/              # General or global test setup
+├── theme/              # Theme
 ├── types/              # TypeScript types and interfaces
-├── utils/              # Packing algorithm and helper functions
+├── utils/
+│   ├── __tests__/      # Tests for utils
+│   └── packingAlgo.ts  # Packing algorithm and helper functions
+├── App.test.tsx        # Tests for root component
 ├── App.tsx             # Root component
 ├── main.tsx            # Application entry point
 └── index.css           # Global styles
