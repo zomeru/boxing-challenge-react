@@ -72,17 +72,17 @@ npm run test
 
 ### Input Products
 
-1. Add product by clicking the `Add Product` button
-2. Choose product in select dropdown input
-3. Add up to 10 products, each has its own quantity.
-4. Click `Calculate Packing` to show the results.
+1. Add a product by clicking the `Add Product` button.
+2. Choose a product from the dropdown menu.
+3. You can add up to 10 products, each with its own quantity.
+4. Click `Calculate Packing` to display the results.
 
 ### View Results
 
 - The algorithm calculates the optimal box configuration and displays:
   - The selected boxes, their dimensions, weight limit, and total weight.
-  - Total products in each box
-  - Utilization percentage per box
+  - Total products in each box.
+  - Utilization percentage per box.
 - If a product cannot fit, an error message is shown.
 
 ---
