@@ -9,9 +9,7 @@ describe("App Component", () => {
 
     expect(screen.getByText(/Boxing Challenge/i)).toBeInTheDocument();
     expect(screen.getAllByText("Select Products")[0]).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: "Clear Products" }),
-    ).toBeDisabled();
+    expect(screen.getByRole("button", { name: "Clear Items" })).toBeDisabled();
     expect(
       screen.getByRole("button", { name: /Calculate Packing/i }),
     ).toBeDisabled();

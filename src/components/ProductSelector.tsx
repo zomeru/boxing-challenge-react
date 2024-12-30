@@ -239,7 +239,7 @@ export const ProductSelector: React.FC<ProductSelectorProps> = ({
               alignSelf: { xs: "stretch", sm: "flex-start" },
             }}
           >
-            Clear Products
+            Clear Items
           </Button>
         </Box>
       </Stack>

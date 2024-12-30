@@ -27,7 +27,7 @@ describe("ProductSelector Component", () => {
 
     expect(screen.getByText("Select Products")).toBeInTheDocument();
     expect(screen.getByText("Add Product")).toBeInTheDocument();
-    expect(screen.getByText("Clear Products")).toBeInTheDocument();
+    expect(screen.getByText("Clear Items")).toBeInTheDocument();
   });
 
   it("should allow adding a product", () => {
@@ -87,7 +87,7 @@ describe("ProductSelector Component", () => {
     expect(mockOnProductsChange).toHaveBeenCalledWith([]);
   });
 
-  it("should clear all products when Clear Products button is clicked", () => {
+  it("should clear all items when Clear Items button is clicked", () => {
     render(
       <ProductSelector
         products={mockProducts}
@@ -97,7 +97,7 @@ describe("ProductSelector Component", () => {
       />,
     );
 
-    fireEvent.click(screen.getByText("Clear Products"));
+    fireEvent.click(screen.getByText("Clear Items"));
     expect(mockOnProductsChange).toHaveBeenCalledWith([]);
   });
 
